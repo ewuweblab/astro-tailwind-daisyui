@@ -1,0 +1,42 @@
+---
+const response = await fetch('https://picsum.photos/v2/list');
+const allTheData = await response.json();
+---
+
+<div class="overflow-x-auto">
+    <table class="table">
+      <!-- head -->
+      <thead>
+        <tr>
+          <th></th>
+          <th>Photographer</th>
+          <th>Thumbnail</th>
+          <th>Website Link</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        {
+            allTheData.map( dataItem => 
+                
+                <tr>
+                    <td>{dataItem.id}</td>
+                    <td>{dataItem.author}</td>
+                    <td>
+                        <img
+                            class="w-full md:w-48 h-32 object-cover rounded"
+                            src={dataItem.download_url}
+                            alt={dataItem.author}>
+                    </td>
+                    <td><a class="link" href={dataItem.download_url}>Learn More about {dataItem.author}</a></td>
+                </tr>
+                
+            )
+        }
+
+
+      </tbody>
+    </table>
+  </div>	
+
+

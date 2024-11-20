@@ -1,25 +1,16 @@
 ---
+// Base Layout
+import BaseLayout from '../layouts/BaseLayout.astro';
 
+// Global Styles
+import '../styles/myCustomStyles.css';
+
+// Your App
+import App from '../components/App.astro'
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
+<BaseLayout>
+	
+	<App />
 
-		<label class="swap swap-flip text-9xl">
-  <!-- this hidden checkbox controls the state -->
-  <input type="checkbox" />
-
-  <div class="swap-on">😈</div>
-  <div class="swap-off">😇</div>
-</label>
-
-	</body>
-</html>
+</BaseLayout>
